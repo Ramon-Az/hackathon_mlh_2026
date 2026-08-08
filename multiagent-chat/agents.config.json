@@ -1,0 +1,31 @@
+{
+  "agents": [
+    {
+      "id": "gpt-rapido",
+      "nome": "GPT Rápido",
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "api_key_env": "OPENAI_API_KEY",
+      "token_quota": 4000,
+      "system_prompt": "Você é um assistente rápido e objetivo, ideal para respostas curtas."
+    },
+    {
+      "id": "claude-raciocinio",
+      "nome": "Claude Raciocínio",
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20241022",
+      "api_key_env": "ANTHROPIC_API_KEY",
+      "token_quota": 8000,
+      "system_prompt": "Você é um assistente cuidadoso, ótimo para raciocínio e respostas mais elaboradas."
+    },
+    {
+      "id": "gpt-reserva",
+      "nome": "GPT Reserva",
+      "provider": "openai",
+      "model": "gpt-4o",
+      "api_key_env": "OPENAI_API_KEY",
+      "token_quota": 6000,
+      "system_prompt": "Você é o agente de reserva, assume a conversa quando os demais esgotarem a cota de tokens."
+    }
+  ]
+}

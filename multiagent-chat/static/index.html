@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat Multiagente</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="painel-agentes">
+      <h2>Agentes</h2>
+      <div id="lista-agentes"></div>
+    </aside>
+
+    <main class="chat">
+      <header>
+        <h1>Chat Multiagente</h1>
+        <span id="agente-ativo" class="badge">carregando...</span>
+      </header>
+
+      <div id="mensagens" class="mensagens"></div>
+
+      <form id="form-chat" class="form-chat">
+        <input id="entrada" type="text" placeholder="Digite sua mensagem..." autocomplete="off" required />
+        <button type="submit">Enviar</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
