@@ -9,7 +9,7 @@ Projetos desenvolvidos durante o **MLH Global Hack Week 2026** — trilha de Age
 ```
 hakaton_mlh_2026/
 ├── primeiro_agent_ai_openai/     # Agente Python com Function Calling (OpenAI)
-├── ghw-agents-day1/              # Workshop JS: 3 passos (request → interativo → memória)
+├── ghw-agents-day2/              # Workshop JS: 3 passos (request → interativo → memória)
 ├── multiagent-chat/              # Chat multi-agente (FastAPI + Web) com troca automática
 ├── app_backboard_dashboard/      # Experimentação com Backboard API
 └── .venv/                        # Ambiente virtual Python (ignorado no git)
