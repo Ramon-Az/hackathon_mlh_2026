@@ -1,0 +1,15 @@
+{
+  "name": "ghw-agents-day1",
+  "version": "1.0.0",
+  "description": "Build Your First AI Agent with OpenAI - MLH Global Hack Week Agents",
+  "type": "module",
+  "scripts": {
+    "step1": "node step-1-first-request.js",
+    "step2": "node step-2-interactive-agent.js",
+    "step3": "node step-3-agent-with-memory.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.0.0",
+    "openai": "^5.0.0"
+  }
+}
