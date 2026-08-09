@@ -23,6 +23,7 @@ build/
 .vite/
 .eslintcache
 .stylelintcache
+.DS_Store
 
 # Coverage
 coverage/
