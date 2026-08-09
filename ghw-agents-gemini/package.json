@@ -1,0 +1,20 @@
+{
+  "name": "ghw-agents-gemini",
+  "version": "1.0.0",
+  "description": "",
+  "main": "step-1-gemini.js",
+  "scripts": {
+    "step1": "node step-1-gemini.js",
+    "step2": "node step-2-chat-agent.js",
+    "step3": "node step-3-vision-agent.js",
+    "step4": "node step-4-tool-agent.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@google/genai": "^2.16.0",
+    "dotenv": "^17.4.2"
+  }
+}
