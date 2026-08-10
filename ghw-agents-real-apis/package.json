@@ -1,0 +1,20 @@
+{
+  "name": "ghw-agents-real-apis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "step-1-first-real-api.js",
+  "scripts": {
+    "step1": "node step-1-first-real-api.js",
+    "step2": "node step-2-api-as-a-tool.js",
+    "step3": "node step-3-real-api-agent.js",
+    "step4": "node step-4-smart-travel-agent.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "openai": "^7.4.0"
+  }
+}
