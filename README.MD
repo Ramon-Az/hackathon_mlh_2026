@@ -13,6 +13,7 @@ hakaton_mlh_2026/
 ├── ghw-agents-gemini/            # Workshop JS Gemini: 4 passos (request → chat → vision → tools)
 ├── multiagent-chat/              # Chat multi-agente (FastAPI + Web) com troca automática
 ├── app_backboard_dashboard/      # Experimentação com Backboard API
+├── ghw-agents-real-apis/         # Workshop MLH: agente com APIs reais (Groq + Open-Meteo/CountriesNow/ExchangeRate)
 └── .venv/                        # Ambiente virtual Python (ignorado no git)
 ```
 
@@ -116,6 +117,45 @@ hakaton_mlh_2026/
 - Descobriu: Backboard **não** tem endpoint OpenAI-compatível (`/chat/completions`)
 - API real: `POST /api/threads/messages` via SDK
 
+### 6. `ghw-agents-real-apis` (JavaScript/Node.js)
+**Workshop MLH Agents Week — agente com APIs reais (Groq).** SDK OpenAI apontado para `https://api.groq.com/openai/v1` + modelo `llama-3.3-70b-versatile`. 4 steps progressivos:
+
+| Step | Arquivo | Descrição |
+|------|---------|-----------|
+| 1 | `step-1-first-real-api.js` | Chamada direta à API real de clima (Open-Meteo) |
+| 2 | `step-2-api-as-a-tool.js` | API vira função reutilizável `getWeather(city)` com geocoding real |
+| 3 | `step-3-real-api-agent.js` | Groq decide quando chamar a tool `getWeather` |
+| 4 | `step-4-smart-travel-agent.js` | **Agente completo** com 3 tools reais + loop + memória entre turnos |
+
+#### 🔧 Tools reais no Step 4:
+| Tool | API | Detalhes |
+|------|-----|----------|
+| `getWeather` | Open-Meteo (geocoding + clima) | Traduz código WMO para `sky: "clear sky"` (anti-alucinação) |
+| `getCountryInfo` | CountriesNow | Capital, população e moeda (3 chamadas paralelas, cache 1x/sessão) |
+| `convertCurrency` | ExchangeRate-API | Taxas reais, cache com TTL de 1h |
+
+#### ✨ Destaques do Step 4:
+- 🧠 **Memória entre turnos** — janela deslizante de 10 mensagens; follow-ups tipo *"e em Tóquio?"* mantêm contexto
+- 🛡️ **Anti-alucinação** — dados brutos são traduzidos antes de ir ao modelo (`weather_code` → descrição legível)
+- ⚡ **Caches** — países 1x/sessão, taxas TTL 1h, geocoding por cidade
+- 🔁 **Robustez** — timeout 10s em toda chamada, parse seguro de argumentos, erro de tool vira mensagem pro modelo
+- 🛟 **Recuperação de erro 400 do Groq** — `parallel_tool_calls: false` + retry automático
+
+- **Como rodar:**
+  ```bash
+  cd ghw-agents-real-apis
+  npm install
+  cp .env.example .env   # GROQ_API_KEY + GROQ_MODEL
+  npm run step4
+  ```
+
+- **Exemplos de conversa no Step 4:**
+  ```
+  You: qual o clima em Manaus?
+  You: e em Tóquio?
+  You: qual a moeda do Japão e quanto são 100 reais?
+  ```
+
 ---
 
 ## ⚙️ Configuração Comum
@@ -135,6 +175,10 @@ GEMINI_API_KEY=...
 
 # OpenWeatherMap (ghw-agents-gemini step-4, opcional)
 OPENWEATHER_API_KEY=...
+
+# Groq (ghw-agents-real-apis)
+GROQ_API_KEY=...
+GROQ_MODEL=llama-3.3-70b-versatile
 ```
 
 > **Nunca comite `.env`** — já está no `.gitignore`.
@@ -154,6 +198,11 @@ OPENWEATHER_API_KEY=...
 | Robust API Query Generation | `ghw-agents-gemini/step-4` (getWeather) |
 | API Fallback (Mock) | `ghw-agents-gemini/step-4` (OpenWeatherMap 401/404) |
 | Backboard API (unified LLM gateway) | `app_backboard_dashboard` |
+| Tool Calling via Groq (OpenAI-compatível) | `ghw-agents-real-apis/step-3, step-4` |
+| Agent Loop multi-step com tools | `ghw-agents-real-apis/step-4` |
+| Conversation Memory (janela deslizante) | `ghw-agents-real-apis/step-4` |
+| Anti-hallucination (tradução de dados brutos) | `ghw-agents-real-apis/step-4` |
+| Caching + Timeout em tools | `ghw-agents-real-apis/step-4` |
 
 ---
 
@@ -164,6 +213,8 @@ OPENWEATHER_API_KEY=...
 - [ ] Interface web para o `primeiro_agent_ai_openai`
 - [ ] Testar Backboard SDK para fallback multi-provider real
 - [ ] Adicionar memory persistente (SQLite/JSON) ao `ghw-agents-gemini/step-2`
+- [ ] Adicionar mais tools ao `ghw-agents-real-apis/step-4` (notícias, GitHub, busca)
+- [ ] Persistir memória do `ghw-agents-real-apis/step-4` em arquivo/SQLite
 
 ---
 

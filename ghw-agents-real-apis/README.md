@@ -15,6 +15,9 @@ We start with a basic API request, turn it into a reusable tool, then build a sm
 - How Groq chooses which tool to use
 - How agents can use multiple real APIs
 - How an agent loop works
+- How to add cross-turn memory to an agent
+- How to make agent tools robust (timeouts, caching, safe parsing)
+- How to reduce hallucination by translating raw data before the model sees it
 
 ## 🛠️ Setup
 
@@ -85,6 +88,22 @@ Give Groq access to multiple real tools:
 - 💱 Currency conversion
 
 The agent can keep using tools until it has enough information to answer.
+
+Try a conversation (the agent remembers previous turns):
+
+```text
+You: what's the weather in Manaus?
+You: and in Tokyo?
+You: what currency does Japan use, and how much is 100 reais in it?
+```
+
+**Step 4 highlights:**
+
+- 🧠 **Cross-turn memory** — keeps a sliding window of past turns, so follow-ups like "and in Tokyo?" keep their context.
+- 🛡️ **Anti-hallucination** — raw weather codes are translated to readable descriptions (`sky: "clear sky"`) before the model sees them, so it never has to guess.
+- ⚡ **Caching** — country lists are fetched once per session, exchange rates are cached for 1h, and geocoding is cached per city.
+- 🔁 **Resilience** — every API call has a 10s timeout, malformed tool arguments are handled safely, and a failed tool execution becomes a message to the model instead of crashing the conversation.
+- 🛟 **Groq 400 recovery** — `parallel_tool_calls: false` plus an automatic retry handles Groq's "Failed to call a function" errors.
 
 ## 🧠 Agent Loop
 
