@@ -13,7 +13,7 @@ Evidências da submissão do **Desafio 3** do MLH Global Hack Week Agents 2026 (
 - [x] R-CLI instalado e funcionando (`Backboard R-CLI 3.0.2`)
 - [x] Print da evidência: `assets/img/01-backboard-version-vscode.png`
 - [x] Texto de submissão preparado
-- [ ] Submissão na plataforma MLH (aguardando upload)
+- [x] Submissão na plataforma MLH (aguardando upload)
 
 ## 🗂️ Evidências
 
