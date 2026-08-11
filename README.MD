@@ -18,6 +18,7 @@ hakaton_mlh_2026/
 ├── desafio3_rcli-walkthrough/     # Evidências do desafio 3 GHW Agents (Instalar R-CLI + Walkthrough)
 ├── ghw-agents-l1-memory/          # Desafio L1 GHW Agents (Agente com Memória de Longo Prazo via ChromaDB)
 ├── ghw-agents-l2-git-pr/          # Desafio L2 GHW Agents (Git Commit & PR Agent via Groq)
+├── ghw-agents-l3-terminal-helper/ # Desafio L3 GHW Agents (Terminal AI Helper: linguagem natural → comando)
 └── .venv/                        # Ambiente virtual Python (ignorado no git)
 ```
 
@@ -213,6 +214,24 @@ hakaton_mlh_2026/
 
 - Detalhes completos em `ghw-agents-l2-git-pr/README.md`
 
+### 11. `ghw-agents-l3-terminal-helper` (Python)
+**Desafio L3 do GHW Agents 2026** (Terminal AI Helper) — agente CLI que traduz linguagem natural (inglês ou português) em comandos de terminal e **pede confirmação antes de executar**.
+
+- 🗣️ **Linguagem natural → comando:** Groq devolve JSON `{comando, explicacao, risco}` (PowerShell no Windows, bash no Linux)
+- 🔒 **Segurança em camadas:** confirmação sempre, classificação de risco (baixo/médio/alto), risco alto exige digitar `sim` completo, timeout de 30s
+- 🖥️ **CLI:** typer + rich — prompt `Você>`, spinner "traduzindo...", painéis
+
+- **Como rodar:**
+  ```bash
+  cd ghw-agents-l3-terminal-helper
+  pip install -r requirements.txt
+  cp .env.example .env   # GROQ_API_KEY
+  python main.py
+  # Ex.: Find all files larger than 100MB | Encontre arquivos maiores que 1MB nesta pasta
+  ```
+
+- Detalhes completos em `ghw-agents-l3-terminal-helper/README.md`
+
 ---
 
 ## ⚙️ Configuração Comum
@@ -268,6 +287,10 @@ GROQ_MODEL=llama-3.3-70b-versatile
 | Git subprocess (diff/status/log) | `ghw-agents-l2-git-pr` |
 | Geração de commit message / PR summary via LLM | `ghw-agents-l2-git-pr` |
 | Detecção de idioma no prompt (EN/PT) | `ghw-agents-l2-git-pr` |
+| NL → comando de terminal (LLM + JSON estruturado) | `ghw-agents-l3-terminal-helper` |
+| Confirmação humana antes de executar (safety) | `ghw-agents-l3-terminal-helper` |
+| Classificação de risco de comandos | `ghw-agents-l3-terminal-helper` |
+| Execução subprocess cross-shell (PS/bash) | `ghw-agents-l3-terminal-helper` |
 
 ---
 
