@@ -14,6 +14,8 @@ hakaton_mlh_2026/
 ├── multiagent-chat/              # Chat multi-agente (FastAPI + Web) com troca automática
 ├── app_backboard_dashboard/      # Experimentação com Backboard API
 ├── ghw-agents-real-apis/         # Workshop MLH: agente com APIs reais (Groq + Open-Meteo/CountriesNow/ExchangeRate)
+├── desafio2_dashboard-nash-demo/ # Evidências do desafio 2 GHW Agents (Dashboard Walkthrough + Nash Demo)
+├── desafio3_/                    # Evidências do desafio 3 GHW Agents (Instalar R-CLI + Walkthrough)
 └── .venv/                        # Ambiente virtual Python (ignorado no git)
 ```
 
@@ -155,6 +157,19 @@ hakaton_mlh_2026/
   You: e em Tóquio?
   You: qual a moeda do Japão e quanto são 100 reais?
   ```
+
+### 7. `desafio2_dashboard-nash-demo`
+**Evidências da submissão do Desafio 2 do GHW Agents 2026** (Dashboard Walkthrough + Nash Demo).
+- Prints numerados em `assets/img/` (`01`–`10`) com a história da tentativa: dashboard Backboard, chat, memória salva, erro por créditos, Nash free tier e a colagem final (`10-desafio2-colagem-final.png`)
+- Submissão: link do repo + tech stack (Backboard, Nash, Python, Backboard SDK, Jupyter Notebook)
+- Detalhes completos em `desafio2_dashboard-nash-demo/README.md`
+
+### 8. `desafio3_`
+**Evidências da submissão do Desafio 3 do GHW Agents 2026** (Instalar R-CLI + Walkthrough).
+- R-CLI instalado e funcionando: `backboard --version` → `Backboard R-CLI 3.0.2`
+- Print da evidência em `assets/img/` (`01-backboard-version-vscode.png`): R-CLI no VS Code + notebook da primeira chamada de API da live ao fundo
+- A `hello.py` literal não rodou por créditos zerados — a 1ª sessão real do R-CLI foi a da live (detalhes no README local)
+- Detalhes completos em `desafio3_/README.md`
 
 ---
 

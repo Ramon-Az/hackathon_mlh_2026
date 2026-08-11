@@ -3,6 +3,9 @@
 __pycache__
 .vscode/
 
+# Backboard R-CLI
+.backboard/
+
 # Node.js
 node_modules/
 npm-debug.log*
