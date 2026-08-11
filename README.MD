@@ -16,6 +16,7 @@ hakaton_mlh_2026/
 ├── ghw-agents-real-apis/         # Workshop MLH: agente com APIs reais (Groq + Open-Meteo/CountriesNow/ExchangeRate)
 ├── desafio2_dashboard-nash-demo/ # Evidências do desafio 2 GHW Agents (Dashboard Walkthrough + Nash Demo)
 ├── desafio3_rcli-walkthrough/     # Evidências do desafio 3 GHW Agents (Instalar R-CLI + Walkthrough)
+├── ghw-agents-l1-memory/          # Desafio L1 GHW Agents (Agente com Memória de Longo Prazo via ChromaDB)
 └── .venv/                        # Ambiente virtual Python (ignorado no git)
 ```
 
@@ -171,6 +172,26 @@ hakaton_mlh_2026/
 - A `hello.py` literal não rodou por créditos zerados — a 1ª sessão real do R-CLI foi a da live (detalhes no README local)
 - Detalhes completos em `desafio3_rcli-walkthrough/README.md`
 
+### 9. `ghw-agents-l1-memory` (Python)
+**Desafio L1 do GHW Agents 2026** (Give Your Agent Long-Term Memory) — agente que memoriza preferências e fatos do usuário **entre sessões** usando **ChromaDB** (armazenamento vetorial).
+
+- 🧠 **Memória semântica:** um LLM extrator transforma cada conversa em fatos duráveis ("Usuário se chama João", "Usuário prefere Python para backend")
+- 🔍 **Recall por similaridade:** embeddings locais `all-MiniLM-L6-v2` (ONNX, sem PyTorch) + busca por cosseno injetada no system prompt
+- 🛠️ **Tools nativas:** `salvar_memoria` / `buscar_memoria` via function calling (Groq, `llama-3.3-70b-versatile`)
+- 💾 **Persistência real:** banco vetorial em `data/` (ignorado no git) — fechar o programa e reabrir faz a sessão 2 lembrar da sessão 1
+- 🛟 **Robustez:** fallback automático para o erro intermitente `tool_use_failed` do Groq (re-tenta sem tools)
+- 🖥️ **CLI:** typer + rich, comandos `!memorias` / `!esquecer` / `!sair`
+
+- **Como rodar:**
+  ```bash
+  cd ghw-agents-l1-memory
+  pip install -r requirements.txt
+  cp .env.example .env   # GROQ_API_KEY
+  python main.py
+  ```
+
+- Detalhes completos em `ghw-agents-l1-memory/README.md`
+
 ---
 
 ## ⚙️ Configuração Comum
@@ -218,6 +239,11 @@ GROQ_MODEL=llama-3.3-70b-versatile
 | Conversation Memory (janela deslizante) | `ghw-agents-real-apis/step-4` |
 | Anti-hallucination (tradução de dados brutos) | `ghw-agents-real-apis/step-4` |
 | Caching + Timeout em tools | `ghw-agents-real-apis/step-4` |
+| Long-Term Memory (vetorial/ChromaDB) | `ghw-agents-l1-memory` |
+| Embeddings locais (ONNX, sem PyTorch) | `ghw-agents-l1-memory` |
+| Semantic Search / Recall por similaridade | `ghw-agents-l1-memory` |
+| Extração automática de fatos (memória semântica) | `ghw-agents-l1-memory` |
+| Function Calling + fallback de erro (Groq) | `ghw-agents-l1-memory` |
 
 ---
 

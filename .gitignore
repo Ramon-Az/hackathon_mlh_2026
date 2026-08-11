@@ -6,6 +6,9 @@ __pycache__
 # Backboard R-CLI
 .backboard/
 
+# L1 memory agent (banco vetorial gerado em runtime)
+ghw-agents-l1-memory/data/
+
 # Node.js
 node_modules/
 npm-debug.log*
