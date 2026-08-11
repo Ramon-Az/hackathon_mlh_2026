@@ -17,6 +17,7 @@ hakaton_mlh_2026/
 ├── desafio2_dashboard-nash-demo/ # Evidências do desafio 2 GHW Agents (Dashboard Walkthrough + Nash Demo)
 ├── desafio3_rcli-walkthrough/     # Evidências do desafio 3 GHW Agents (Instalar R-CLI + Walkthrough)
 ├── ghw-agents-l1-memory/          # Desafio L1 GHW Agents (Agente com Memória de Longo Prazo via ChromaDB)
+├── ghw-agents-l2-git-pr/          # Desafio L2 GHW Agents (Git Commit & PR Agent via Groq)
 └── .venv/                        # Ambiente virtual Python (ignorado no git)
 ```
 
@@ -192,6 +193,26 @@ hakaton_mlh_2026/
 
 - Detalhes completos em `ghw-agents-l1-memory/README.md`
 
+### 10. `ghw-agents-l2-git-pr` (Python)
+**Desafio L2 do GHW Agents 2026** (Git Commit & PR Agent) — ferramenta que lê o `git diff` local e gera mensagens de commit ou resumos de PR com Groq.
+
+- 🔍 **Contexto git real:** `git diff`/`--staged`, `status --short`, `log --oneline -5` e branch via subprocess (sem libs C)
+- 🧠 **LLM (Groq):** `llama-3.3-70b-versatile` gera mensagem conventional ou PR summary (título + bullets + `## Test`)
+- 🌐 **Idioma inteligente:** detecta o idioma dos commits recentes (`auto`) ou força com `--idioma en|pt`; prompts EN/PT duplos
+- 🖥️ **CLI:** typer + rich — flags `--staged`, `--pr`, `--limit N`
+- 🪞 **Demo meta:** o commit deste projeto (`559ca99`) foi escrito pelo próprio agente
+
+- **Como rodar:**
+  ```bash
+  cd ghw-agents-l2-git-pr
+  pip install -r requirements.txt
+  cp .env.example .env   # GROQ_API_KEY
+  python main.py --staged          # mensagem de commit
+  python main.py --staged --pr     # resumo de PR
+  ```
+
+- Detalhes completos em `ghw-agents-l2-git-pr/README.md`
+
 ---
 
 ## ⚙️ Configuração Comum
@@ -244,6 +265,9 @@ GROQ_MODEL=llama-3.3-70b-versatile
 | Semantic Search / Recall por similaridade | `ghw-agents-l1-memory` |
 | Extração automática de fatos (memória semântica) | `ghw-agents-l1-memory` |
 | Function Calling + fallback de erro (Groq) | `ghw-agents-l1-memory` |
+| Git subprocess (diff/status/log) | `ghw-agents-l2-git-pr` |
+| Geração de commit message / PR summary via LLM | `ghw-agents-l2-git-pr` |
+| Detecção de idioma no prompt (EN/PT) | `ghw-agents-l2-git-pr` |
 
 ---
 
