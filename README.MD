@@ -22,6 +22,7 @@ hakaton_mlh_2026/
 ├── desafio1_github-skills-intro-github/ # GitHub Skills: Introduction to GitHub (12/08)
 ├── desafio2_github-skills-copilot/      # GitHub Skills: Getting Started with Copilot (12/08)
 ├── desafio3_github-skills-codespace/    # GitHub Skills: Code with Codespaces (12/08)
+├── desafio4_github-skills-repo-management/ # GitHub Skills: Intro to Repository Management (12/08)
 ├── ghw-agents-frameworks/              # Frameworks e templates de agentes
 └── .venv/                        # Ambiente virtual Python (ignorado no git)
 ```
@@ -257,7 +258,14 @@ hakaton_mlh_2026/
 - 📦 **Submissão:** link do repo + screenshot no GHW Agents 2026
 - 🔗 **Detalhes:** `desafio3_github-skills-codespace/README.md`
 
-### 15. `ghw-agents-frameworks` (TypeScript/Python)
+### 15. `desafio4_github-skills-repo-management`
+**GitHub Skills: Intro to Repository Management** — conclusão do curso de gerenciamento de repositórios (12/08).
+- 📁 **Objetivo:** aprender a gerenciar repositórios no GitHub — branch protection, issues, projects, segurança, Actions básicas
+- ✅ **Evidência:** print de conclusão do curso (`assets/img/01-github-repo-management.png`)
+- 📦 **Submissão:** link do repo + screenshot no GHW Agents 2026
+- 🔗 **Detalhes:** `desafio4_github-skills-repo-management/README.md`
+
+### 16. `ghw-agents-frameworks` (TypeScript/Python)
 **Frameworks de Agentes Multi-provider** — templates experimentais com LangChain + NestJS + React (11/08).
 - 🏗️ **Backend LangChain:** multi-agente para planejamento de eventos (supervisor + 5 agentes especializados: catering, marketing, sponsor, venue, lead)
 - 🎨 **Frontend Vite + React:** interface de chat com agents em tempo real
