@@ -50,3 +50,51 @@ logs/
 # OS
 .DS_Store
 Thumbs.db
+
+# Node.js (extendido)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+pids
+*.pid
+*.seed
+*.pid.lock
+lib-cov
+*.lcov
+.grunt
+bower_components
+.lock-wscript
+build/Release
+jspm_packages/
+web_modules/
+*.tsbuildinfo
+.npm
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+.node_repl_history
+*.tgz
+.yarn-integrity
+.env
+.env.test
+.env.production
+.env.local
+.agents/
+.serverless/
+.fusebox/
+.dynamodb/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Vite / React build
+frontend/dist/
+
+# NestJS build
+services/backend-langchain/dist/
+services/backend-adk/dist/
+
+# VuePress
+.vuepress/dist
+# Frameworks experimentais (não versionado)
+gw-agents-frameworks/
