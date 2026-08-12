@@ -19,6 +19,10 @@ hakaton_mlh_2026/
 ├── ghw-agents-l1-memory/          # Desafio L1 GHW Agents (Agente com Memória de Longo Prazo via ChromaDB)
 ├── ghw-agents-l2-git-pr/          # Desafio L2 GHW Agents (Git Commit & PR Agent via Groq)
 ├── ghw-agents-l3-terminal-helper/ # Desafio L3 GHW Agents (Terminal AI Helper: linguagem natural → comando)
+├── desafio1_github-skills-intro-github/ # GitHub Skills: Introduction to GitHub (12/08)
+├── desafio2_github-skills-copilot/      # GitHub Skills: Getting Started with Copilot (12/08)
+├── desafio3_github-skills-codespace/    # GitHub Skills: Code with Codespaces (12/08)
+├── ghw-agents-frameworks/              # Frameworks e templates de agentes
 └── .venv/                        # Ambiente virtual Python (ignorado no git)
 ```
 
@@ -232,7 +236,30 @@ hakaton_mlh_2026/
 
 - Detalhes completos em `ghw-agents-l3-terminal-helper/README.md`
 
+### 12. `desafio1_github-skills-intro-github`
+**GitHub Skills: Introduction to GitHub** — conclusão do curso oficial do GitHub Skills (12/08).
+- 📝 **Objetivo:** aprender fluxo básico de GitHub — criar branch, fazer commit, abrir Pull Request, mergear
+- ✅ **Evidência:** print de conclusão no repositório `Ramon-Az/introduction-to-github` (badge "Congratulations!")
+- 📦 **Submissão:** link do repo + screenshot no GHW Agents 2026
+- 🔗 **Detalhes:** `desafio1_github-skills-intro-github/README.md`
+
+### 13. `desafio2_github-skills-copilot`
+**GitHub Skills: Getting Started with Copilot** — conclusão do curso de GitHub Copilot (12/08).
+- 🤖 **Objetivo:** usar Copilot no VS Code/Codespaces — Ask mode, Edit mode, Inline Chat, revisão de PR
+- ✅ **Evidência:** conclusão do exercício guiado pelo bot "Mona" no Codespace
+- 📦 **Submissão:** link do repo + screenshot no GHW Agents 2026
+- 🔗 **Detalhes:** `desafio2_github-skills-copilot/README.md`
+
+### 14. `desafio3_github-skills-codespace`
+**GitHub Skills: Code with Codespaces** — conclusão do curso de Codespaces (12/08).
+- ☁️ **Objetivo:** criar e configurar ambiente de dev no GitHub Codespaces — VS Code no navegador, edição direta
+- ✅ **Evidência:** print do Codespace funcionando (`assets/img/01-github-codespace.png`)
+- 📦 **Submissão:** link do repo + screenshot no GHW Agents 2026
+- 🔗 **Detalhes:** `desafio3_github-skills-codespace/README.md`
+
 ---
+
+## ⚙️ Configuração Comum
 
 ## ⚙️ Configuração Comum
 

@@ -10,7 +10,7 @@ Evidências da submissão do **Desafio 2** do MLH Global Hack Week Agents 2026 (
 - [x] Evidências coletadas (10 prints)
 - [x] Colagem final gerada: `assets/img/10-desafio2-colagem-final.png`
 - [x] Texto de submissão preparado
-- [ ] Submissão na plataforma MLH (aguardando upload)
+- [x] Submissão na plataforma MLH
 
 ## 🗂️ Evidências
 
