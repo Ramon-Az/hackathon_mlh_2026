@@ -96,5 +96,4 @@ services/backend-adk/dist/
 
 # VuePress
 .vuepress/dist
-# Frameworks experimentais (não versionado)
 gw-agents-frameworks/

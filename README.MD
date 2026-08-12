@@ -257,9 +257,15 @@ hakaton_mlh_2026/
 - 📦 **Submissão:** link do repo + screenshot no GHW Agents 2026
 - 🔗 **Detalhes:** `desafio3_github-skills-codespace/README.md`
 
----
+### 15. `ghw-agents-frameworks` (TypeScript/Python)
+**Frameworks de Agentes Multi-provider** — templates experimentais com LangChain + NestJS + React (11/08).
+- 🏗️ **Backend LangChain:** multi-agente para planejamento de eventos (supervisor + 5 agentes especializados: catering, marketing, sponsor, venue, lead)
+- 🎨 **Frontend Vite + React:** interface de chat com agents em tempo real
+- 📚 **Slides:** 2 sessões de apresentação (Markdown/HTML)
+- 🛠️ **Stack:** TypeScript, NestJS, LangChain, LangGraph, Vite, React
+- 🔗 **Detalhes:** `ghw-agents-frameworks/README.md` + `ghw-agents-frameworks/services/backend-langchain/README.md`
 
-## ⚙️ Configuração Comum
+---
 
 ## ⚙️ Configuração Comum
 
