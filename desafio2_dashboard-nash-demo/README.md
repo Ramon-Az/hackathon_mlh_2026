@@ -29,6 +29,10 @@ Evidências da submissão do **Desafio 2** do MLH Global Hack Week Agents 2026 (
 | 09 | `09-nash-troca-modelo.png` | Nash — troca de modelo |
 | 10 | `10-desafio2-colagem-final.png` | **Colagem enviada na submissão** (05 em cima + 08 embaixo) |
 
+**Evidência principal (colagem enviada na submissão):**
+
+![Colagem final do Desafio 2](assets/img/10-desafio2-colagem-final.png "Colagem: memória salva no Backboard + aviso de free tier no Nash")
+
 ## 🔗 Submissão
 - Link do repo: `https://github.com/Ramon-Az/hackathon_mlh_2026`
 - Tech stack: Backboard, Nash, Python, Backboard SDK, Jupyter Notebook

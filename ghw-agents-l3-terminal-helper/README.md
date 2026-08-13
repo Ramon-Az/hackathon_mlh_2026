@@ -59,6 +59,12 @@ Risco: ALTO
 ⚠ RISCO ALTO. Digite 'sim' para executar: <só 's' não passa>
 ```
 
+**Evidências (prints reais):**
+
+![Busca de arquivos maiores que 1KB](assets/img/01-busca-arquivos-1kb.png "Comando traduzido + risco baixo")
+
+![Risco alto bloqueado até digitar 'sim'](assets/img/02-risco-alto-bloqueado.png "Confirmação reforçada para risco alto")
+
 ## 📌 Lições aprendidas
 - **Saída estruturada do LLM (JSON) + parse tolerante** funciona melhor que texto livre:
   o modelo às vezes envolve o JSON em markdown ou texto — o `_extract_json` cobre isso.

@@ -61,6 +61,14 @@ Você> Qual é o meu nome? E qual linguagem eu prefiro?
 Agente> Seu nome é João e você prefere a linguagem Python para desenvolvimento backend.
 ```
 
+**Evidências (prints reais):**
+
+![Sessão 1 — memorizando preferências](assets/img/01-demonstracao_sessao1.png "Sessão 1: usuário informa nome e preferência")
+
+![Sessão 2 — recall entre sessões](assets/img/02-demonstracao_sessao2.png "Sessão 2: agente lembra do usuário")
+
+![Memória salva no ChromaDB](assets/img/03-demonstracao_memoria_salva.png "Memória persistida no banco vetorial")
+
 ## 📌 Lições aprendidas
 - **ChromaDB** é um armazenamento vetorial de verdade (coleções, metadados, busca por
   cosseno) e resolve embeddings localmente via ONNX — sem precisar de PyTorch.

@@ -23,6 +23,10 @@ Evidências da submissão do **Desafio 3** do MLH Global Hack Week Agents 2026 (
 |---|---------|--------------|
 | 01 | `01-backboard-version-vscode.png` | **Evidência enviada na submissão** — R-CLI no terminal do VS Code com `backboard --version` → `Backboard R-CLI 3.0.2`, ao fundo o notebook com a primeira chamada de API feita durante a live |
 
+**Evidência (print real):**
+
+![R-CLI no VS Code com backboard --version](assets/img/01-backboard-version-vscode.png "Backboard R-CLI 3.0.2 + notebook da primeira chamada de API")
+
 ## 🔗 Submissão
 - Link do repo: `https://github.com/Ramon-Az/hackathon_mlh_2026`
 - Tech stack: Backboard, R-CLI, Python, Jupyter Notebook, VS Code

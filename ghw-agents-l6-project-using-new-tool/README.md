@@ -65,6 +65,12 @@ $ python main.py testar "Ferramenta Template" --% "{\"acao\": \"demo\"}"
 }
 ```
 
+**Evidências (prints reais):**
+
+![Listagem de adapters registrados](assets/img/01-listar-adapters.png "python main.py listar")
+
+![Teste de execução de um adapter](assets/img/02-testar-adapter.png "python main.py testar com JSON")
+
 ## Como adicionar uma nova ferramenta
 1. Criar classe que herde de `NovaFerramentaAdapter`
 2. Implementar `executar()`, `validar()`, `nome`, `descricao`

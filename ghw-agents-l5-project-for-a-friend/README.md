@@ -50,6 +50,10 @@ balanceamento entre segurança e crescimento:
 aconselhamento financeiro. Consulte um profissional qualificado.
 ```
 
+**Evidência (print real):**
+
+![Resposta do agente para perfil moderado](assets/img/01-resposta-perfil-moderado.png "Agente do amigo: perfil moderado + disclaimer")
+
 ## 📌 Lições aprendidas
 - **`__init__.py` não deve importar o CLI** — `from . import dados, agente` (app.py/main.py ficam na raiz), senão quebra `python main.py`.
 - **Pequenos bugs de sintaxe** (indentação, f-string com espaço, `-> str` sem `:`) quebram o módulo inteiro — validar sempre com `python -c "import main"`.

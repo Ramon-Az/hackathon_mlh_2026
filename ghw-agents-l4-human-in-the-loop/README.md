@@ -57,6 +57,10 @@ Você> delete all files
 ⚠ RISCO ALTO. Digite 'sim' para executar: <só 's' não passa>
 ```
 
+**Evidência (print real):**
+
+![Análise de risco alto no L4](assets/img/01-analise-risco-alto.png "HITL: comando destrutivo exige 'sim' completo")
+
 ## 📌 Lições aprendidas
 - **Frases de linguagem natural precisam virar comandos reais** — sem tradução, o shell tenta rodar "list all files" e falha (código 1). O mapeamento de frases → comandos resolve (PowerShell no Windows, bash no Linux).
 - **`shell=True` no Windows usa cmd.exe, que não conhece cmdlets do PowerShell** (`Get-ChildItem`, `New-Item`). Solução: executar `powershell.exe -NoProfile -Command <comando>` com argumentos em lista.

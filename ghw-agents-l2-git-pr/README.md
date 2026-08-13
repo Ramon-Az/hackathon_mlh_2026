@@ -61,6 +61,12 @@ Arquivos afetados:
 
 E `python main.py --staged --pr` gera o resumo de PR (título + bullets + seção `## Test`).
 
+**Evidências (prints reais):**
+
+![Mensagem de commit gerada pelo agente](assets/img/01-commit-message.png "Commit message gerada com Groq")
+
+![Resumo de PR gerado pelo agente](assets/img/02-pr-summary.png "PR summary gerado com Groq")
+
 ## 📌 Lições aprendidas
 - **Subprocess para git é suficiente** — não precisa de pygit2/bibliotecas C; `git diff`,
   `git status --short` e `git log --oneline` via subprocess cobrem o caso.
