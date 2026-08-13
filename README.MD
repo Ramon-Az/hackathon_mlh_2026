@@ -19,6 +19,9 @@ hakaton_mlh_2026/
 ├── ghw-agents-l1-memory/          # Desafio L1 GHW Agents (Agente com Memória de Longo Prazo via ChromaDB)
 ├── ghw-agents-l2-git-pr/          # Desafio L2 GHW Agents (Git Commit & PR Agent via Groq)
 ├── ghw-agents-l3-terminal-helper/ # Desafio L3 GHW Agents (Terminal AI Helper: linguagem natural → comando)
+├── ghw-agents-l4-human-in-the-loop/ # Desafio L4 GHW Agents (Human-in-the-Loop Workflow)
+├── ghw-agents-l5-project-for-a-friend/ # Desafio L5 GHW Agents (Agente para um amigo)
+├── ghw-agents-l6-project-using-new-tool/ # Desafio L6 GHW Agents (Adapter de nova ferramenta)
 ├── desafio1_github-skills-intro-github/ # GitHub Skills: Introduction to GitHub (12/08)
 ├── desafio2_github-skills-copilot/      # GitHub Skills: Getting Started with Copilot (12/08)
 ├── desafio3_github-skills-codespace/    # GitHub Skills: Code with Codespaces (12/08)
@@ -273,6 +276,63 @@ hakaton_mlh_2026/
 - 🛠️ **Stack:** TypeScript, NestJS, LangChain, LangGraph, Vite, React
 - 🔗 **Detalhes:** `ghw-agents-frameworks/README.md` + `ghw-agents-frameworks/services/backend-langchain/README.md`
 
+### 17. `ghw-agents-l4-human-in-the-loop` (Python)
+**Desafio L4 do GHW Agents 2026** (Human-in-the-Loop Workflow) — agente que traduz linguagem natural → comando de terminal real, classifica o risco e **pede confirmação humana antes de executar** (100% local, sem LLM).
+
+- 🔄 **Tradução de frases → comandos reais:** mapeamento PowerSell/bash — `list all files` → `Get-ChildItem` / `ls -la`, `create a new folder` → `New-Item` / `mkdir`, `delete all files` → `Remove-Item * -Recurse -Force` / `rm -rf *`
+- ⚖️ **Classificação de risco local:** regex ancoradas (baixo/médio/alto) + explicação do comando
+- 🧑⚖️ **HITL de verdade:** risco alto exige digitar `sim` completo (`s`/`y` não passam); `Ctrl+C` cancela
+- 🛡️ **Segurança em camadas:** comando sempre exibido antes de executar, timeout de 30s, execução via `powershell.exe -NoProfile -Command` (cmd.exe não conhece cmdlets)
+- 🖥️ **CLI:** typer + rich — painéis coloridos por risco, comandos `!sair` / `!ajuda`
+
+- **Como rodar:**
+  ```powershell
+  cd ghw-agents-l4-human-in-the-loop
+  pip install -r requirements.txt
+  $env:PYTHONIOENCODING='utf-8'   # evita erro com emojis no Windows
+  python main.py
+  # Ex.: list all files | create a new folder | delete all files (exige 'sim')
+  ```
+
+- Detalhes completos em `ghw-agents-l4-human-in-the-loop/README.md`
+
+### 18. `ghw-agents-l5-project-for-a-friend` (Python)
+**Desafio L5 do GHW Agents 2026** (Project for a Friend) — agente de IA personalizado para um amigo, com perfil de investidor (conservador/moderado/arrojado), contexto do amigo e disclaimer obrigatório.
+
+- 👤 **Contexto do amigo:** carrega `data/perfil_investidor.json`, transações e histórico (se existirem)
+- 📊 **3 perfis de investidor:** respostas específicas por perfil + disclaimer financeiro sempre incluído
+- 🎛️ **Duas interfaces:** CLI interativa (typer/rich) e web (Streamlit `app.py`) com **dropdown de perfil na sidebar** — troca o perfil em tempo real
+- 💻 **100% offline:** respostas por templates de perfil (sem chamada de API — provedor/modelo são config exibida)
+- 🛠️ **Dependências:** streamlit, openai, anthropic, google-generativeai, groq, pandas
+
+- **Como rodar:**
+  ```bash
+  cd ghw-agents-l5-project-for-a-friend
+  pip install -r requirements.txt
+  python main.py                                   # CLI interativa
+  streamlit run app.py                             # interface web
+  ```
+
+- Detalhes completos em `ghw-agents-l5-project-for-a-friend/README.md`
+
+### 19. `ghw-agents-l6-project-using-new-tool` (Python)
+**Desafio L6 do GHW Agents 2026** (Project Using a New Tool) — agente que integra novas ferramentas via **padrão Adapter** + registry, seguindo as convenções do framework agentlocal.
+
+- 🔌 **`NovaFerramentaAdapter` (ABC):** contrato `executar()` / `validar()` / `nome` / `descricao` para plugar qualquer ferramenta
+- 🗂️ **Registry global:** `REGISTRY_ADAPTERS` + `registrar_adapter()` / `obter_adapter()` / `listar_adapters()` + factory `criar_adapter()` com fallback
+- 🖥️ **CLI:** typer — `listar` / `testar <nome> <json>` / `registrar`
+- ⚠️ **PowerShell:** use `--%` (stop-parsing) antes do JSON para o PS não "comer" as aspas internas
+
+- **Como rodar:**
+  ```powershell
+  cd ghw-agents-l6-project-using-new-tool
+  pip install -r requirements.txt
+  python main.py listar
+  python main.py testar "Ferramenta Template" --% "{\"acao\": \"demo\"}"
+  ```
+
+- Detalhes completos em `ghw-agents-l6-project-using-new-tool/README.md`
+
 ---
 
 ## ⚙️ Configuração Comum
@@ -332,6 +392,13 @@ GROQ_MODEL=llama-3.3-70b-versatile
 | Confirmação humana antes de executar (safety) | `ghw-agents-l3-terminal-helper` |
 | Classificação de risco de comandos | `ghw-agents-l3-terminal-helper` |
 | Execução subprocess cross-shell (PS/bash) | `ghw-agents-l3-terminal-helper` |
+| Human-in-the-Loop (confirmação antes de executar) | `ghw-agents-l4-human-in-the-loop` |
+| Tradução de linguagem natural → comando real (regras) | `ghw-agents-l4-human-in-the-loop` |
+| Execução via `powershell.exe` (cmdlets) vs `cmd.exe` | `ghw-agents-l4-human-in-the-loop` |
+| Agente personalizado com perfil do usuário | `ghw-agents-l5-project-for-a-friend` |
+| Interface Streamlit com dropdown de perfil | `ghw-agents-l5-project-for-a-friend` |
+| Padrão Adapter + Registry (novas ferramentas) | `ghw-agents-l6-project-using-new-tool` |
+| Factory de ferramentas com fallback | `ghw-agents-l6-project-using-new-tool` |
 
 ---
 
