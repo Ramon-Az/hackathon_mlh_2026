@@ -409,7 +409,7 @@ GROQ_MODEL=llama-3.3-70b-versatile
 - [ ] Adicionar mais tools no `primeiro_agent_ai_openai` (busca web, execução de código)
 - [ ] Persistir memória em banco (SQLite/Redis) no `multiagent-chat`
 - [ ] Interface web para o `primeiro_agent_ai_openai`
-- [ ] Testar Backboard SDK para fallback multi-provider real
+- [x] Testar Backboard SDK para fallback multi-provider real — **testado** em `app_backboard_dashboard` (notebook `primeira_chamada_api.ipynb`): SDK funciona, mas a Backboard **não tem endpoint OpenAI-compatível** (`/chat/completions`) — inviável como fallback direto
 - [ ] Adicionar memory persistente (SQLite/JSON) ao `ghw-agents-gemini/step-2`
 - [ ] Adicionar mais tools ao `ghw-agents-real-apis/step-4` (notícias, GitHub, busca)
 - [ ] Persistir memória do `ghw-agents-real-apis/step-4` em arquivo/SQLite
