@@ -269,7 +269,7 @@ class AgenteFriend:
                 "simbolo": simbolo,
                 "perfil_compatibilidade": self.perfil_investidor,
                 "recomendacao": "consulte_profissional",
-                "riesgo": "medium",
+                "risco": "medium",
             }
             
             # Se tiver histórico, pode enriquecer

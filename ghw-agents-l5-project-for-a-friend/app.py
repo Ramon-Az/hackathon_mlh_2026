@@ -109,7 +109,7 @@ with st.sidebar:
             import io
             content = io.StringIO(historico_file.getvalue().decode("utf-8"))
             reader = csv.DictReader(content)
-            st.success(f"✅ {sum(1 for _ in registro) } registros de histórico carregados!")
+            st.success(f"✅ {sum(1 for _ in reader)} registros de histórico carregados!")
         except Exception as e:
             st.error(f"❌ Erro ao ler histórico: {e}")
     
