@@ -264,10 +264,10 @@ hakaton_mlh_2026/
 - 🔗 **Detalhes:** `desafio3_github-skills-codespace/README.md`
 
 ### 15. `desafio4_github-skills-repo-management`
-**GitHub Skills: Intro to Repository Management** — conclusão do curso de gerenciamento de repositórios (12/08).
+**GitHub Skills: Intro to Repository Management** — curso de gerenciamento de repositórios (12/08).
 - 📁 **Objetivo:** aprender a gerenciar repositórios no GitHub — branch protection, issues, projects, segurança, Actions básicas
-- ✅ **Evidência:** print de conclusão do curso (`assets/img/01-github-repo-management.png`)
-- 📦 **Submissão:** link do repo + screenshot no GHW Agents 2026
+- ⏳ **Obs:** curso em **finalização** pelo autor (Ramon) — o print de conclusão (`assets/img/01-github-repo-management.png`) será adicionado ao concluir
+- 📦 **Submissão:** link do repo + screenshot no GHW Agents 2026 (quando concluído)
 - 🔗 **Detalhes:** `desafio4_github-skills-repo-management/README.md`
 
 ### 16. `ghw-agents-frameworks` (TypeScript/Python)
