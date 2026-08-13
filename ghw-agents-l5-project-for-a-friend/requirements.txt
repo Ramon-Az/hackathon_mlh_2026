@@ -1,0 +1,9 @@
+# L5 Project for a Friend - dependencies
+streamlit
+openai
+anthropic
+google-generai
+groq
+python-dotenv
+pandas
+pyyaml

@@ -1,0 +1,6 @@
+# L6 Project Using a New Tool - requirements.txt
+# Dependências variam da ferramenta nova escolhida
+# Base para adapter pattern e CLI
+
+typer
+rich
