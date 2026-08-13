@@ -2,6 +2,8 @@
 
 Projetos desenvolvidos durante o **MLH Global Hack Week 2026** — trilha de Agentes de IA.
 
+🏁 **Concluído em 13/08/2026** — todos os desafios implementados, validados e documentados. ✅
+
 ---
 
 ## 📁 Estrutura do Repositório
